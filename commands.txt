@@ -1,0 +1,155 @@
+# Django Management Commands — Complete Quick Note
+
+### 🏗️ Project & App
+
+**`django-admin startproject myproject .`**
+→ Create a new Django project in the current folder.
+
+**`py manage.py startapp core`**
+→ Create a new Django application inside the project.
+
+---
+
+### 🗄️ Database & Migrations
+
+**`py manage.py makemigrations`**
+→ Create migration files based on changes in your models.
+
+**`py manage.py makemigrations core`**
+→ Create migrations specifically for the `core` app.
+
+**`py manage.py migrate`**
+→ Apply migration files to the database.
+
+**`py manage.py showmigrations`**
+→ Show which migrations have been applied and which are pending.
+
+---
+
+### 👤 Admin & Users
+
+**`py manage.py createsuperuser`**
+→ Create an administrator account for Django Admin.
+
+**`py manage.py changepassword username`**
+→ Change a user's password.
+
+---
+
+### 🚀 Server
+
+**`py manage.py runserver`**
+→ Start Django's development server.
+
+**`py manage.py runserver 8080`**
+→ Start the server on port `8080`.
+
+**`py manage.py runserver 0.0.0.0:8000`**
+→ Make the development server accessible from other devices on your network.
+
+---
+
+### 🐚 Django Shell
+
+**`py manage.py shell`**
+→ Open Python's interactive shell with Django configured.
+
+Useful for testing models and database operations.
+
+Example:
+
+```python
+from core.models import User
+User.objects.all()
+```
+
+---
+
+### 🔍 Project Checking
+
+**`py manage.py check`**
+→ Check your Django project for common configuration problems.
+
+**`py manage.py check --deploy`**
+→ Check for some deployment-related issues.
+
+---
+
+### 📦 Static Files
+
+**`py manage.py collectstatic`**
+→ Collect static files from your apps into the configured static directory.
+
+Usually used when preparing Django for production.
+
+---
+
+### 🌐 URLs & Configuration
+
+**`py manage.py diffsettings`**
+→ Show differences between your settings and Django's default settings.
+
+**`py manage.py show_urls`**
+→ Django itself doesn't provide this command by default. You need a third-party package such as `django-extensions`.
+
+---
+
+### 🧹 Database
+
+**`py manage.py flush`**
+→ Delete all data from the database while keeping the database structure.
+
+⚠️ Be careful: this removes your database data.
+
+---
+
+### 📋 Commands & Help
+
+**`py manage.py`**
+→ Show available Django management commands.
+
+**`py manage.py help`**
+→ Show help for Django commands.
+
+**`py manage.py help migrate`**
+→ Show detailed help for the `migrate` command.
+
+**`py manage.py help startapp`**
+→ Show detailed help for `startapp`.
+
+---
+
+# 🔥 Most Important Commands to Remember
+
+If you're learning Django, focus on these first:
+
+| Command                            | What it does                  |
+| ---------------------------------- | ----------------------------- |
+| **`py manage.py runserver`**       | Start development server      |
+| **`py manage.py startapp core`**   | Create an app                 |
+| **`py manage.py makemigrations`**  | Create migration instructions |
+| **`py manage.py migrate`**         | Apply migrations to database  |
+| **`py manage.py createsuperuser`** | Create admin user             |
+| **`py manage.py shell`**           | Open Django Python shell      |
+| **`py manage.py check`**           | Check project for problems    |
+| **`py manage.py showmigrations`**  | Show migration status         |
+| **`py manage.py collectstatic`**   | Collect static files          |
+
+### 🧠 Easy way to remember migrations
+
+**Change `models.py`**
+
+↓
+
+**`makemigrations`**
+→ "Django, create instructions for this database change."
+
+↓
+
+**`migrate`**
+→ "Django, actually apply those instructions to the database."
+
+So:
+
+> **`makemigrations` → Create migration instructions**
+> **`migrate` → Apply those instructions to the database**
