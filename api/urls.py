@@ -7,5 +7,5 @@ path("students/<int:id>/", views.studentDetail),
 
 
 path("employee/",views.Employees.as_view()),
-path("employee/<int:id>/",views.EmployeesDtail.as_view())
+path("employee/<int:pk>/",views.EmployeesDtail.as_view())
 ]
