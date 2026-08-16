@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "students",
     "api",
     "employees",
-    "blogs"
+    "blogs",
+    "django_filters"
 ]
 
 MIDDLEWARE = [
@@ -135,6 +136,8 @@ MAILERS = {
 REST_FRAMEWORK={
 'DEFAULT_PAGINATION_CLASS':
     'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE':1
+    'PAGE_SIZE':5,
+    'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend'],
+    'SEARCH_PARAM':'search_query'
     
 }
